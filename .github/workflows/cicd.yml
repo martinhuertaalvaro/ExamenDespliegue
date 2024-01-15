@@ -1,16 +1,14 @@
-name: ci
+name: CI
 
 on: [push]
 
 jobs:
-  CI:
+  build-test:
     runs-on: ubuntu-latest
+
     steps:
-    - uses: actions/checkout@v3
-    - name: PHPUnit Tests
-      uses: php-actions/phpunit@v3
-      env:
-          TEST_NAME: CalculadoraTest
-      with:
-          configuration: test/phpunit.xml
-          args: --coverage-text
+      - uses: actions/checkout@v3
+      - run: echo "The ${{ github.repository }} repository has been cloned to the runner."
+      - uses: php-actions/composer@v6
+      - run: echo "Composer dependencies have been installed"
+      - run: vendor/bin/phpunit
