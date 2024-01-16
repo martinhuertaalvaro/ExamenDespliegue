@@ -10,6 +10,7 @@ jobs:
       steps:
         - uses: actions/checkout@v3
         - run: echo "The ${{ github.repository }} repository has been cloned to the runner."
+        - name: PHPUnit Tests
         - uses: php-actions/composer@v6
         - run: echo "Composer dependencies have been installed"
         - run: vendor/bin/phpunit tests/
@@ -19,7 +20,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-  #    - name: Docker Login
+      - name: Docker Login
   #      run: docker login -u ${{ secrets.DOCKER_USER }} -p ${{ secrets.DOCKER_PASSWORD }}
   #    - name: Build
   #      run: |
