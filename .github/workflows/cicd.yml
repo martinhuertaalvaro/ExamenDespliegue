@@ -3,8 +3,8 @@ name: CICD
 on: [push]
 
 jobs:
-  #ci:
-    build-test:
+  ci:
+  #  build-test:
       runs-on: ubuntu-latest
 
       steps:
@@ -13,12 +13,12 @@ jobs:
         - uses: php-actions/composer@v6
         - run: echo "Composer dependencies have been installed"
         - run: vendor/bin/phpunit tests/
-  #cd:
-  #  runs-on: ubuntu-latest
-  #  needs: ci
+  cd:
+    runs-on: ubuntu-latest
+    needs: ci
 
-  #  steps:
-  #    - uses: actions/checkout@v3
+    steps:
+      - uses: actions/checkout@v3
   #    - name: Docker Login
   #      run: docker login -u ${{ secrets.DOCKER_USER }} -p ${{ secrets.DOCKER_PASSWORD }}
   #    - name: Build
