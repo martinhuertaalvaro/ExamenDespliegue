@@ -3,7 +3,7 @@ name: CICD
 on: [push]
 
 jobs:
-  ci:
+  #ci:
     build-test:
       runs-on: ubuntu-latest
 
