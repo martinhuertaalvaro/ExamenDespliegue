@@ -1,4 +1,4 @@
-*****
+******
 Ejemplo CI con github actions.
 Utililzamos composer para instalar phpunit (composer require --dev symfony/test-pack)
 Ignoramos vendor/
