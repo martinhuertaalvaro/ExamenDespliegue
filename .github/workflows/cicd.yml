@@ -22,10 +22,10 @@ jobs:
       - name: Docker Login
         run: docker login -u ${{ secrets.DOCKER_USER }} -p ${{ secrets.DOCKER_PASSWORD }}
       - name: Build
-        run: |
+        run: 
 #          docker build -t ${{ secrets.DOCKER_USER }}/2dawcicd:${{ github.sha }} .
           docker build -t ${{ secrets.DOCKER_USER }}/2dawcicd:latest .
       - name: Push
-        run: |
+        run: 
 #          docker push ${{ secrets.DOCKER_USER }}/2dawcicd:${{ github.sha }}
           docker push ${{ secrets.DOCKER_USER }}/2dawcicd:latest
